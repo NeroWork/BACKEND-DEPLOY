@@ -3,7 +3,7 @@ const { UserRepository } = require("../repository/user.repository");
 const { isValidPassword, createHash } = require("../utils/bcrypt");
 const nodemailer = require("nodemailer");
 const { uploader } = require("../utils/uploader");
-const { UserDTO } = require("../Dto/user.dto");
+const { UserDTO } = require("../dto/user.dto");
 const passport = require("passport");
 const { authRoleJWT } = require("../middleware/auth.middleware");
 

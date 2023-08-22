@@ -1,7 +1,6 @@
 const {Router} = require("express");
 const { CartRepository } = require("../repository/cart.repository");
 const { errorHandler } = require("../middleware/errorHandler");
-const { generateInvalidParamInfo, EErrors, CustomError } = require("../utils/customError");
 const passport = require("passport");
 const { counterModel } = require("../models/counter.model");
 const { TicketRepository } = require("../repository/ticket.repository");
