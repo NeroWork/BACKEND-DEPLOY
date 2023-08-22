@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const { authRoleJWT } = require("../middleware/auth.middleware");
-const { UserDTO } = require("../Dto/user.dto");
+const { UserDTO } = require("../dto/user.dto");
 const passport = require("passport");
 
 const chatRouter = Router();
