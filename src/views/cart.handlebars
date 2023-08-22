@@ -1,0 +1,20 @@
+<div class="d-flex flex-column align-items-center">
+    <button class="btn btn-secondary m-1" onclick="cartEmpty('{{_id}}')" >Empty</button>
+    <div class="border-bottom border-primary border-3 rounded my-4">
+        <h1>Id del Carrito: {{_id}}</h1>
+    </div>
+    {{#each products}}
+    <div class="d-flex flex-column align-items-center border-bottom border-primary border-3 rounded-5 my-4">
+        <h2>Titulo: {{this.product.title}}</h2>
+        <h3>Descripcion: {{this.product.description}}</h3>
+        <h3>Cantidad: {{this.quantity}}</h3>
+        <h3>Id Producto: {{this.product._id}}</h3>
+        <img class="my-3" src="{{this.product.thumbnail}}" width="200px" alt="Imagen de {{this.product.title}}">
+    </div>
+    {{/each}}
+    <div class="d-flex align-items-center">
+        <button class="btn btn-secondary m-1" onclick="postCompra('{{_id}}')">Comprar</button>
+    </div>
+</div>
+
+<script src="../../static/js/cart.js"></script>
