@@ -6,7 +6,7 @@ const postCompra = async (id) => {
         method: "GET"
     })
     console.log("done");
-    location.href = `https://backend-16d8.onrender.com/views/cart/${id}`;
+    // location.href = `https://backend-16d8.onrender.com/views/cart/${id}`;
 }
 
 const cartEmpty = async (id) => {

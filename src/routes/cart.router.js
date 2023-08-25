@@ -43,7 +43,7 @@ cartRouter.get("/:cid/purchase", passport.authenticate("jwt", {session: false}),
                 productosNoDisponibles.push(element);                       //I push it in the array of products that couldn't be sold
             }
         });
-
+        console.log("break 1");
         //-------Counter operations and ticket creation--------------
         let counter = await counterModel.findById("648fd8a49cfd322f711e8c83");          //I search for the counter
         let counterValor = counter.valor;                                               //save it's value
@@ -56,6 +56,7 @@ cartRouter.get("/:cid/purchase", passport.authenticate("jwt", {session: false}),
             purchase_datetime: date
         }
         counter = await counterModel.updateOne({_id: "648fd8a49cfd322f711e8c83"}, {valor: counterValor+1}); //update the counter on the db
+        console.log("break 2");
         // console.log(counter);
         let ticketCreated = await ticketRepository.createTicket(ticket);                //create the ticket on the db
         console.log(ticketCreated);
@@ -66,7 +67,7 @@ cartRouter.get("/:cid/purchase", passport.authenticate("jwt", {session: false}),
         // productosNoDisponibles.forEach(element => {
         //     console.log(element.product._id);
         // });
-        
+        console.log("break 3");
         let newCart = await cartRepository.updateCartProducts(cid, {payload: productosNoDisponibles});
         console.log(newCart);
         res.status(200).send(productosNoDisponibles);
