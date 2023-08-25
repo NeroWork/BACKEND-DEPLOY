@@ -5,7 +5,8 @@ const postCompra = async (id) => {
     const resp = await fetch(`https://backend-16d8.onrender.com/api/carrito/${id}/purchase`, {
         method: "GET"
     })
-    console.log(resp);
+    const respJson = await resp.json();
+    console.log(respJson);
     // location.href = `https://backend-16d8.onrender.com/views/cart/${id}`;
 }
 
