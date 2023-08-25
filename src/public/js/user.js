@@ -4,7 +4,7 @@ const userContainer = document.getElementById("userContainer");
 const getUser = async () => {
     console.log("hi");
     const uid = inputID.value;
-    const resp = await fetch(`http://backend-16d8.onrender.com/api/usuarios/${uid}`, {
+    const resp = await fetch(`https://backend-16d8.onrender.com/api/usuarios/${uid}`, {
         method: "GET",
     })
     const respJSON = await resp.json();
@@ -28,13 +28,13 @@ const getUser = async () => {
 }
 
 const deleteUser = async (uid) => {
-    const resp = await fetch(`http://backend-16d8.onrender.com/api/usuarios/${uid}`, {
+    const resp = await fetch(`https://backend-16d8.onrender.com/api/usuarios/${uid}`, {
         method: "DELETE",
     });
     console.log(resp);
-    location.href = `http://backend-16d8.onrender.com/session/render`;
+    location.href = `https://backend-16d8.onrender.com/session/render`;
 }
 
 const changeRolPage = (uid) => {
-    location.href = `http://backend-16d8.onrender.com/api/usuarios/premium/${uid}`;
+    location.href = `https://backend-16d8.onrender.com/api/usuarios/premium/${uid}`;
 }

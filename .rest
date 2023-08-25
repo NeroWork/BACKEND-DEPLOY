@@ -1,4 +1,4 @@
-POST http://backend-16d8.onrender.com/api/producto
+POST https://backend-16d8.onrender.com/api/producto
 Content-Type: application/json
 
 {
@@ -11,13 +11,13 @@ Content-Type: application/json
 
 ###
 
-GET http://backend-16d8.onrender.com/api/producto
+GET https://backend-16d8.onrender.com/api/producto
 
 ###
-GET http://backend-16d8.onrender.com/api/producto/6443e5692ae03ef850195720
+GET https://backend-16d8.onrender.com/api/producto/6443e5692ae03ef850195720
 
 ###
-PUT http://backend-16d8.onrender.com/api/producto/6443e5692ae03ef850195720
+PUT https://backend-16d8.onrender.com/api/producto/6443e5692ae03ef850195720
 Content-Type: application/json
 
 {
@@ -31,22 +31,22 @@ Content-Type: application/json
 
 ###
 
-DELETE http://backend-16d8.onrender.com/api/producto/6446bd3b4bd56b1e95343784
+DELETE https://backend-16d8.onrender.com/api/producto/6446bd3b4bd56b1e95343784
 
 ###
-POST http://backend-16d8.onrender.com/api/carrito/
+POST https://backend-16d8.onrender.com/api/carrito/
 Content-Type: application/json
 
 {
 }
 
 ###
-POST http://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1/products/64471c2b017deda933d139de
+POST https://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1/products/64471c2b017deda933d139de
 
 ###
-DELETE http://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1/products/64471c2b017deda933d139de
+DELETE https://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1/products/64471c2b017deda933d139de
 ###
-PUT http://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1
+PUT https://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1
 Content-Type: application/json
 
 {
@@ -85,7 +85,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1/products/64442586c288c3c5597f51d7
+PUT https://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1/products/64442586c288c3c5597f51d7
 Content-Type: application/json
 
 {
@@ -94,7 +94,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1
+DELETE https://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1
 
 ###
-GET http://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1
+GET https://backend-16d8.onrender.com/api/carrito/6446fdc7f8494c1c15b6b2b1

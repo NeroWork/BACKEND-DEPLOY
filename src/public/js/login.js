@@ -12,7 +12,7 @@ form.addEventListener("submit", async (e) => {
     });
     console.log(object);
 
-    const resp = await fetch("http://backend-16d8.onrender.com/session/login", {
+    const resp = await fetch("https://backend-16d8.onrender.com/session/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -21,7 +21,7 @@ form.addEventListener("submit", async (e) => {
     })
     if(await resp.text() === "Success"){
         console.log("Correcamente loggeado");
-        location.href = "http://backend-16d8.onrender.com/views/products?limit=2"
+        location.href = "https://backend-16d8.onrender.com/views/products?limit=2"
     } else{
         console.log("error al logear");
         console.log(await resp);
@@ -29,7 +29,7 @@ form.addEventListener("submit", async (e) => {
 })
 
 const getCookie = async () => {
-    const resp = await fetch("http://backend-16d8.onrender.com/cookie/getSigned", {
+    const resp = await fetch("https://backend-16d8.onrender.com/cookie/getSigned", {
         method: "GET"
     });
     console.log( await resp.json());
@@ -42,11 +42,11 @@ reset_pass_button.addEventListener("click", async (evt) => {
     let id_email_recu = document.getElementById("email_recu");
     let email_recu = id_email_recu.value;
 
-    const resp = await fetch(`http://backend-16d8.onrender.com/mail/${email_recu}`, {
+    const resp = await fetch(`https://backend-16d8.onrender.com/mail/${email_recu}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         }
     });
-    window.location.replace("http://backend-16d8.onrender.com/session/render"); 
+    window.location.replace("https://backend-16d8.onrender.com/session/render"); 
 })

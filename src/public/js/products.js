@@ -7,7 +7,7 @@ const addToCartThis = async (cartId, prodId) => {
     console.log(cartId);
     console.log(prodId);
 
-    const resp = await fetch(`http://backend-16d8.onrender.com/api/carrito/${cartId}/products/${prodId}`,{
+    const resp = await fetch(`https://backend-16d8.onrender.com/api/carrito/${cartId}/products/${prodId}`,{
         method: "POST"
     })
     console.log("RESPUESTA---------");

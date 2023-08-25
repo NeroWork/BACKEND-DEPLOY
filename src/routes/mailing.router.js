@@ -24,7 +24,7 @@ mailingRouter.post("/:mail", async (req, res) => {
         html: `
             <div>Hola! Siguiendo este link podes cambiar tu contraseña:</div>
             <div>
-                <a href='http://backend-16d8.onrender.com/api/resPass/${mail}'>Recuperar contraseña</a>
+                <a href='https://backend-16d8.onrender.com/api/resPass/${mail}'>Recuperar contraseña</a>
             </div>
         `,
         attachments: []
