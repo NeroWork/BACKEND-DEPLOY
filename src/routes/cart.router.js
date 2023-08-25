@@ -4,9 +4,11 @@ const { errorHandler } = require("../middleware/errorHandler");
 const passport = require("passport");
 const { counterModel } = require("../models/counter.model");
 const { TicketRepository } = require("../repository/ticket.repository");
+const { ProductRepository } = require("../repository/product.repository");
 
 const cartRouter = Router();
 let cartRepository = new CartRepository();
+let productRepository = new ProductRepository();
 let ticketRepository = new TicketRepository();
 
 cartRouter.post("/", async (req, res) => {
@@ -25,7 +27,6 @@ cartRouter.get("/:cid", errorHandler, async (req, res) => {
 })
 
 cartRouter.get("/:cid/purchase", passport.authenticate("jwt", {session: false}), async (req, res) => {
-    console.log("break 0")
     const cid = req.params.cid;           //I save the id of the cart to purchase
     try {
         //--------Cart Managment---------------------------
@@ -44,7 +45,6 @@ cartRouter.get("/:cid/purchase", passport.authenticate("jwt", {session: false}),
                 productosNoDisponibles.push(element);                       //I push it in the array of products that couldn't be sold
             }
         });
-        console.log("break 1");
         //-------Counter operations and ticket creation--------------
         let counter = await counterModel.findById("648fd8a49cfd322f711e8c83");          //I search for the counter
         let counterValor = counter.valor;                                               //save it's value
@@ -57,7 +57,6 @@ cartRouter.get("/:cid/purchase", passport.authenticate("jwt", {session: false}),
             purchase_datetime: date
         }
         counter = await counterModel.updateOne({_id: "648fd8a49cfd322f711e8c83"}, {valor: counterValor+1}); //update the counter on the db
-        console.log("break 2");
         // console.log(counter);
         let ticketCreated = await ticketRepository.createTicket(ticket);                //create the ticket on the db
         console.log(ticketCreated);
@@ -68,7 +67,6 @@ cartRouter.get("/:cid/purchase", passport.authenticate("jwt", {session: false}),
         // productosNoDisponibles.forEach(element => {
         //     console.log(element.product._id);
         // });
-        console.log("break 3");
         let newCart = await cartRepository.updateCartProducts(cid, {payload: productosNoDisponibles});
         console.log(newCart);
         res.status(200).send(productosNoDisponibles);

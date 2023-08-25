@@ -7,7 +7,7 @@ const postCompra = async (id) => {
     })
     const respJson = await resp.json();
     console.log(respJson);
-    // location.href = `https://backend-16d8.onrender.com/views/cart/${id}`;
+    location.href = `https://backend-16d8.onrender.com/views/cart/${id}`;
 }
 
 const cartEmpty = async (id) => {
