@@ -25,6 +25,7 @@ cartRouter.get("/:cid", errorHandler, async (req, res) => {
 })
 
 cartRouter.get("/:cid/purchase", passport.authenticate("jwt", {session: false}), async (req, res) => {
+    console.log("break 0")
     const cid = req.params.cid;           //I save the id of the cart to purchase
     try {
         //--------Cart Managment---------------------------
