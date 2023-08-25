@@ -7,7 +7,7 @@ let id_new_pass2 = document.getElementById("new-pass-id-2");
 console.log("script2");
 
 const reset = async (mail) => {
-    const RespUser = await fetch(`http://localhost:8080/api/usuarios/confirmUser/${mail}`, {
+    const RespUser = await fetch(`http://backend-16d8.onrender.com/api/usuarios/confirmUser/${mail}`, {
         method: "GET"
     });
     const user = await RespUser.json();
@@ -23,7 +23,7 @@ const reset = async (mail) => {
     let new_pass2 = id_new_pass2.value;
 
     //Primer chequeo
-    const isValidResp = await fetch(`http://localhost:8080/api/usuarios/isValidPassword/${mail}/${old_pass}`, {
+    const isValidResp = await fetch(`http://backend-16d8.onrender.com/api/usuarios/isValidPassword/${mail}/${old_pass}`, {
         method: "GET"
     });
     const isValid = await isValidResp.json();
@@ -47,13 +47,13 @@ const reset = async (mail) => {
     }
 
     //Crear contraseña hasheada
-    let password_hashed_resp =  await fetch(`http://localhost:8080/api/usuarios/hashPassword/${new_pass}`, {
+    let password_hashed_resp =  await fetch(`http://backend-16d8.onrender.com/api/usuarios/hashPassword/${new_pass}`, {
         method: "GET"
     });
     let password_hashed = await password_hashed_resp.text();
     console.log("password-hashed es: ", password_hashed);
     //actualizar usuario con nueva contraseña
-    const updateResp = await fetch(`http://localhost:8080/api/usuarios/updateUser/${mail}`, {
+    const updateResp = await fetch(`http://backend-16d8.onrender.com/api/usuarios/updateUser/${mail}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"

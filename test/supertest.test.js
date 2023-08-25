@@ -2,7 +2,7 @@ const supertest = require("supertest");
 const chai = require("chai");
 
 const expect = chai.expect;
-const requester = supertest("http://localhost:8080");
+const requester = supertest("http://backend-16d8.onrender.com");
 
 describe("Testing App", () => {
     beforeEach( function() {
